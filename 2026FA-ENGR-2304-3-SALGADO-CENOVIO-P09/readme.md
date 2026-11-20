@@ -1,83 +1,60 @@
-### **Pressure Control System \& Rocket Countdown**
 
-
-
-#### Program Description:(PCS)
-
-* This program is written to monitor pressure when using a analog pressure sensor that's connected through pin A0. It keeps running simulated compressor output until it reaches desired pressure which I placed at 10 PSI.
-
-
-
-#### How the Program Works:(PCS)
-
-1. It reads the pressure sensor which is connected to analog pin A0.
-2. Will translate the sensor reading into the estimated pressure in PSI.
-3. Then it compares the current pressure with the set pressure of 10 PSI.
-4. Next step it turns on the compressor output when below 10 PSI and turns off once the targeted pressure is reached.
-5. The pressures reading is displayed including the compressor status in the serial monitor.
-
-
-
-#### Hardware Used (Tinkercad):(PCS)
-
+2026FA-ENGR-2304-3-SALGADO-CENOVIO-Final Project
+Pressure Control and Rocket Countdown System
+Project Description
+This project combines a pressure control system and a rocket launch countdown using an Arduino Uno R3. The program uses a potentiometer to simulate pressure readings and controls LED indicators, an LCD display, and a simulated compressor output.
+Components Used
+* 1 Arduino Uno R3
+* 1 Small breadboard
+* 1 200 Ohm resistor
+* 4 220 Ohm resistors
+* 5 Red LEDs
+* 1 MCP23008-based I2C LCD
+* 1 Four-AA battery pack
+* 1 Diode
+* 2 250 kOhm potentiometers
+How the Program Works
+1. Pressure Control
+* The potentiometer simulates pressure readings.
+* The LCD displays the current pressure in PSI.
+* Four LEDs indicate increasing pressure levels.
+* The compressor output turns ON while pressure is below 10 PSI.
+* The compressor output turns OFF when the target pressure is reached.
+2. Rocket Countdown
+* After reaching the target pressure, the program begins a 10-second countdown.
+* The LCD displays the remaining countdown time.
+* The countdown runs from 10 to 0.
+3. Rocket Launch
+* When the countdown finishes, the launch LED turns ON.
+* The LCD displays “LAUNCH COMPLETE!”
+* The program prints the completion messages to the Serial Monitor.
+Arduino Pin Connections
+Arduino Pin	Component
+A0		Pressure potentiometer
+A4		LCD SDA
+A5		LCD SCL
+D8		Compressor simulation output
+D9		Launch LED
+D10		Pressure LED 1
+D11		Pressure LED 2
+D12		Pressure LED 3
+D13		Pressure LED 4
+Software Requirements
+* Arduino IDE or Tinkercad Circuits
+* Adafruit_LiquidCrystal library
 * Arduino Uno R3
-* breadboard
-* wires
-* LED
-* Resistor 220 ohm
-
-
-
-#### Wire Connections:(PCS)
-
-**(Arduino Uno R3)	(Component)**
-
-Digital pin 8		220 ohm resister
-
-resister other end	LED long leg (+)
-
-GND			LED short leg(-)
-
-
-
-#### Serial Monitor:(PCS)
-
-* The program is set to use baud rate of 9600.
-
-
-
-#### Target Pressure:(PCS)
-
-* Pressure is set at a target of 10.0 PSI, but can be altered inside the program depending on the situation.
-
-
-
-#### Program Description:(RC)
-
-* This code will display a countdown starting from 10 ending at 0 which can be seen inside the serial monitor. Then after the countdown it will display a message that tis complete, and at the same time the LED will turn on indicating the end of simulation.
-
-
-
-#### Hardware(Tinkercad):(RC)
-
-* Arduino Uno R3
-* Breadboard
-* Wires
-* LED
-* Resistor 220-ohm
-
-
-
-#### Wire Connections:(RC)
-
-**(Arduino Uno R3)	(Component)**
-
-Digital pin 8		220 ohm resister
-
-resister other end	LED long leg (+)
-
-GND			LED short leg(-)
-
+How to Run
+1. Open the project in Tinkercad Circuits.
+2. Open the Arduino code editor.
+3. Paste the project code.
+4. Start the simulation.
+5. Adjust the pressure potentiometer until it reaches 10 PSI.
+6. Watch the LCD and LED indicators.
+7. Observe the 10-second rocket countdown.
+8. The launch LED turns ON when the countdown finishes.
+Project Purpose
+The purpose of this project is to demonstrate Arduino programming, analog input, digital output, LCD communication, LED control, and automated countdown sequences.
+Note: The compressor is represented by a simulated digital output and does not operate a physical compressor.
 
 
 
